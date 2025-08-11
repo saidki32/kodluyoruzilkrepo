@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hızlı Tarifler</title>
+  <style>
+    /* Çok az CSS: temel düzen ve okunabilirlik */
+    body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 16px; background:#fff; color:#111; }
+    header { margin-bottom: 18px; }
+    h1 { margin: 0 0 6px; font-size: 28px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .recipes { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media(min-width:720px){ .recipes { grid-template-columns: 1fr 1fr; } }
+    .card { border: 1px solid #ddd; padding: 12px; border-radius: 6px; }
+    .card img { width:100%; height:140px; object-fit:cover; border-radius:4px; display:block; margin-bottom:8px; }
+    .meta { font-size: 13px; color:#666; margin-bottom:8px; }
+    .btn { display:inline-block; padding:6px 10px; background:#0077cc; color:#fff; text-decoration:none; border-radius:4px; font-size:14px; }
+    /* Tarif bölümü */
+    .recipe-detail { margin-top:18px; border-top:1px solid #eee; padding-top:18px; }
+    .ingredients li, .steps li { margin-bottom:6px; }
+    footer { margin-top:28px; font-size:13px; color:#666; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Hızlı Tarifler</h1>
+      <p>Kolay ve lezzetli yemek tarifleri — evde hızlıca yapabileceğiniz seçenekler.</p>
+    </header>
+
+    <section>
+      <h2>Tarifler</h2>
+      <div class="recipes">
+        <!-- Tarif 1 -->
+        <article class="card" id="tarif1">
+          <img src="https://images.unsplash.com/photo-1604908177522-2d4c6b4f1b5e?w=1200&q=60" alt="Domatesli Makarna">
+          <h3>Domatesli Makarna</h3>
+          <div class="meta">Hazırlama: 10 dk • Pişirme: 15 dk • 2-3 kişilik</div>
+          <p>Basit, hızlı ve lezzetli bir domates soslu makarna tarifi.</p>
+          <a href="#detail1" class="btn" onclick="showDetail('detail1')">Tarifi Gör</a>
+        </article>
+
+        <!-- Tarif 2 -->
+        <article class="card" id="tarif2">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=60" alt="Tavuklu Salata">
+          <h3>Tavuklu Akşam Salatası</h3>
+          <div class="meta">Hazırlama: 15 dk • Pişirme: 12 dk • 2 kişilik</div>
+          <p>Izgara tavuk, taze yeşillikler ve nar ekşili sosla hafif bir salata.</p>
+          <a href="#detail2" class="btn" onclick="showDetail('detail2')">Tarifi Gör</a>
+        </article>
+
+        <!-- Tarif 3 -->
+        <article class="card" id="tarif3">
+          <img src="https://images.unsplash.com/photo-1523983301817-7bd7f5f7cdbd?w=1200&q=60" alt="Sebzeli Omlet">
+          <h3>Sebzeli Omlet</h3>
+          <div class="meta">Hazırlama: 5 dk • Pişirme: 6 dk • 1-2 kişilik</div>
+          <p>Hızlı kahvaltı veya hafif öğün için sebzeli omlet.</p>
+          <a href="#detail3" class="btn" onclick="showDetail('detail3')">Tarifi Gör</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tarif Detayları (aynı sayfada, basit gezinme) -->
+    <section class="recipe-detail" id="detail1">
+      <h2>Domatesli Makarna</h2>
+      <p><em>Hazırlama: 10 dk • Pişirme: 15 dk • 2-3 kişilik</em></p>
+      <h3>Malzemeler</h3>
+      <ul class="ingredients">
+        <li>200 g makarna (penne veya spagetti)</li>
+        <li>2 yemek kaşığı zeytinyağı</li>
+        <li>2 diş sarımsak (ince doğranmış)</li>
+        <li>3 adet olgun domates (küçük doğranmış) veya 1 kutu doğranmış domates</li>
+        <li>Tuz, karabiber, 1 çay kaşığı kuru fesleğen</li>
+        <li>İsteğe bağlı: rendelenmiş parmesan</li>
+      </ul>
+      <h3>Yapılışı</h3>
+      <ol class="steps">
+        <li>Makarna paket talimatına göre tuzlu suda haşlanır.</li>
+        <li>Tavada zeytinyağını ısıt, sarımsağı kısa kavur (yanmasın).</li>
+        <li>Doğranmış domatesleri ekle, tuz, karabiber ve fesleğeni koyup 8-10 dk pişir.</li>
+        <li>Makarna süzülür, sosla karıştırılır. Üzerine parmesan serpebilirsin.</li>
+      </ol>
+    </section>
+
+    <section class="recipe-detail" id="detail2" style="display:none">
+      <h2>Tavuklu Akşam Salatası</h2>
+      <p><em>Hazırlama: 15 dk • Pişirme: 12 dk • 2 kişilik</em></p>
+      <h3>Malzemeler</h3>
+      <ul class="ingredients">
+        <li>1 tavuk göğsü (ızgara veya tavada pişirilmiş)</li>
+        <li>Karışık yeşillikler (marul, roka, bebek ıspanak)</li>
+        <li>1/2 salatalık, 1 domates, küçük doğranmış</li>
+        <li>1 yemek kaşığı zeytinyağı, 1 tatlı kaşığı nar ekşisi</li>
+        <li>Tuz ve karabiber</li>
+      </ul>
+      <h3>Yapılışı</h3>
+      <ol class="steps">
+        <li>Tavuk göğsünü tuz ve karabiberle pişirip dilimle.</li>
+        <li>Tüm yeşillikleri ve sebzeleri karıştır, üzerine tavuk dilimlerini ekle.</li>
+        <li>Zeytinyağı ve nar ekşisini karıştırıp salataya gezdir.</li>
+      </ol>
+    </section>
+
+    <section class="recipe-detail" id="detail3" style="display:none">
+      <h2>Sebzeli Omlet</h2>
+      <p><em>Hazırlama: 5 dk • Pişirme: 6 dk • 1-2 kişilik</em></p>
+      <h3>Malzemeler</h3>
+      <ul class="ingredients">
+        <li>2-3 yumurta</li>
+        <li>1/4 kırmızı biber, 1/4 soğan, küçük doğranmış</li>
+        <li>1 avuç ıspanak veya kabak dilimleri</li>
+        <li>Tuz, karabiber, 1 tatlı kaşığı tereyağı veya zeytinyağı</li>
+      </ul>
+      <h3>Yapılışı</h3>
+      <ol class="steps">
+        <li>Yumurtaları bir kapta çırp, tuz ve karabiber ekle.</li>
+        <li>Tavada yağ ile sebzeleri sotele, yumuşayınca çırpılmış yumurtayı dök.</li>
+        <li>Altı kızarınca spatula ile katla veya kapakla pişirip servis et.</li>
+      </ol>
+    </section>
+
+    <footer>
+      <p>Bu basit site örneği — istersen daha fazla tarif, resim veya kategori ekleyebilirim.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Minimal JS: tarif detaylarını göster/gizle (CSS çok az kullanıldığı için JS ile kontrol ediyoruz)
+    function showDetail(id){
+      // Tüm detail bölümlerini gizle
+      document.querySelectorAll('.recipe-detail').forEach(function(el){
+        el.style.display = 'none';
+      });
+      // Seçilen detayı göster
+      var sel = document.getElementById(id);
+      if(sel) sel.style.display = 'block';
+      // sayfayı o detaya kaydır
+      location.hash = id;
+    }
+
+    // Eğer sayfa açılırken hash varsa ilgili detayı göster
+    window.addEventListener('load', function(){
+      var h = location.hash.replace('#','');
+      if(h) {
+        // hash "detail1" gibi ise göster
+        var el = document.getElementById(h);
+        if(el) el.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
